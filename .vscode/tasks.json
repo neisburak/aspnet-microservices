@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj",
+        "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -19,7 +19,7 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj",
+        "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -32,7 +32,7 @@
       "args": [
         "watch",
         "run",
-        "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj",
+        "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj",
         "/property:GenerateFullPaths=true",
         "/consoleloggerparameters:NoSummary"
       ],
@@ -45,12 +45,12 @@
       "dockerBuild": {
         "tag": "aspnetmicroservices:dev",
         "target": "base",
-        "dockerfile": "${workspaceFolder}/src/services/Catalog/Catalog.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/src/services/Basket/Basket.API/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj"
       }
     },
     {
@@ -59,12 +59,12 @@
       "dependsOn": ["build"],
       "dockerBuild": {
         "tag": "aspnetmicroservices:latest",
-        "dockerfile": "${workspaceFolder}/src/services/Catalog/Catalog.API/Dockerfile",
+        "dockerfile": "${workspaceFolder}/src/services/Basket/Basket.API/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj"
       }
     },
     {
@@ -73,7 +73,7 @@
       "dependsOn": ["docker-build: debug"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj",
+        "appProject": "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj",
         "enableDebugging": true
       }
     },
@@ -83,7 +83,7 @@
       "dependsOn": ["docker-build: release"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/src/services/Catalog/Catalog.API/Catalog.API.csproj"
+        "appProject": "${workspaceFolder}/src/services/Basket/Basket.API/Basket.API.csproj"
       }
     }
   ]
